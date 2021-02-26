@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-
+<h1>Primo snack</h1>
 <?php
 // Creo un Array con la squadra di casa/avversari e stampo a schermo il loro relativo punteggio
 
@@ -39,11 +39,38 @@ $matches = [
 
 
 for ($i=0; $i < count($matches) ; $i++) {
+
   echo $matches[$i]['Home']. '-' .$matches[$i]['Opponents'] . '||';
-  echo $matches[$i]['Home points']. '-' .$matches[$i]['Opponents points'].'</br>'.'</br>';
+
+  echo $matches[$i]['Home points']. '-' .$matches[$i]['Opponents points']
+
+  .'</br>'.'</br>';
 }
  ?>
 
+<h1>Secondo snack</h1>
+
+<?php
+
+$name = $_GET['name'];
+
+$email = $_GET['email'];
+
+$age= $_GET['age'];
+
+$intAge = (int)$age; //trasformo in intero il parametro ricevuto in GET
+
+
+if (strlen($name) > 3  && strpos($email, '@') !== false
+ && strpos($email, '.') !==false && is_int($intAge)) {
+
+  echo "Benvenuto ". $name . " acceso riuscito!";
+}
+else {
+  echo "Accesso negato";
+}
+
+ ?>
 
 
   </body>
