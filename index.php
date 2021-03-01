@@ -58,11 +58,9 @@ $email = $_GET['email'];
 
 $age= $_GET['age'];
 
-$intAge = (int)$age; //trasformo in intero il parametro ricevuto in GET
-
 
 if (strlen($name) > 3  && strpos($email, '@') !== false
- && strpos($email, '.') !==false && is_int($intAge)) {
+ && strpos($email, '.') !==false && is_numeric($age)) {
 
   echo "Benvenuto ". $name . " acceso riuscito!";
 }
